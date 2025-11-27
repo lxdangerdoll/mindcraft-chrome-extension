@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AEGIS SANCTUARY</title>
+    <style>
+        body {
+            background-color: #0f0518;
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: radial-gradient(circle at 50% 50%, rgba(15, 5, 24, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+        }
+
+        .clock {
+            font-size: 4em;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .task-box {
+            border: 1px dashed #bf00ff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            width: 300px;
+            background: rgba(0,0,0,0.3);
+        }
+        .task-label { color: #bf00ff; font-size: 0.8em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .task-text { font-size: 1.2em; color: #fff; }
+
+        /* APP LINKS GRID */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .app-link {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            background: rgba(255,255,255,0.05);
+        }
+        .app-link:hover {
+            border-color: #00ffcc;
+            background: rgba(0, 255, 204, 0.1);
+            transform: scale(1.1);
+        }
+
+        .compass-mini {
+            width: 400px;
+            display: flex;
+            border-bottom: 1px solid #00ffcc;
+        }
+        .compass-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #00ffcc;
+            padding: 10px;
+            font-family: inherit;
+        }
+        .compass-input:focus { outline: none; }
+        .compass-icon { padding: 10px; cursor: pointer; }
+        .compass-icon:hover { text-shadow: 0 0 10px #00ffcc; }
+
+        .mascot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.5;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock" id="clock">00:00</div>
+
+    <div class="task-box">
+        <span class="task-label">M.O.M.M.Y. DIRECTIVE:</span>
+        <span class="task-text" id="daily-task">Loading...</span>
+    </div>
+
+    <div class="app-grid">
+        <a href="https://synapsecomics.com/aegis/aegis-arcade/index.html" class="app-link" title="The Arcade">👾</a>
+        <a href="https://synapsecomics.com/aegis/turing_lovelace_university.html" class="app-link" title="TLU Academy">🏛️</a>
+        <a href="https://synapsecomics.com/aegis/protocol-velvet/index.html" class="app-link" title="Protocol Velvet">🕸️</a>
+        <a href="https://synapsecomics.com/aegis/aegis-arcade/the-velvet-loop.html" class="app-link" title="The Archives">📜</a>
+    </div>
+
+    <div class="compass-mini">
+        <input type="text" id="compass-text" class="compass-input" placeholder="Paste Lie Here for Audit...">
+        <span class="compass-icon" id="btn-audit">👁️</span>
+    </div>
+
+    <div class="mascot" id="mascot">🦊</div>
+
+    <!-- External JS File (Required for Chrome Extensions) -->
+    <script src="dashboard.js"></script>
+
+</body>
+</html>
