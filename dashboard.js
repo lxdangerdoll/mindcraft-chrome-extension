@@ -1,5 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     
+    let sessionLog = [];
+
+    function logEvent(type, content) {
+        const timestamp = new Date().toLocaleTimeString();
+        const entry = `[${timestamp}] [${type}]: ${content}`;
+        sessionLog.push(entry);
+        console.log(entry); 
+    }
+
     // --- 1. CLOCK LOGIC ---
     function updateClock() {
         const now = new Date();
@@ -21,52 +30,86 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
     const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
     document.getElementById('daily-task').innerText = randomTask;
+    logEvent("M.O.M.M.Y.", randomTask);
 
-    // --- 3. COMPASS LOGIC ---
+    // --- 3. COMPASS LOGIC (URL PARAM MODE) ---
     const compassBtn = document.getElementById('btn-audit');
     const compassInput = document.getElementById('compass-text');
 
-    compassBtn.addEventListener('click', function() {
+    function triggerAudit() {
         const text = compassInput.value;
         if (text) {
-            navigator.clipboard.writeText(text).then(() => {
-                // In a real extension, we might use chrome.tabs.create
-                // But window.open usually works if triggered by user action
-                window.open('https://synapsecomics.com/aegis/contextual-sanitizer.html', '_blank');
-            });
+            logEvent("COMPASS_AUDIT_REQUEST", text);
+            // Encode text for URL
+            const encodedText = encodeURIComponent(text);
+            // Open Sanitizer with the text in the URL
+            window.open(`https://synapsecomics.com/aegis/contextual-sanitizer.html?audit=${encodedText}`, '_blank');
         } else {
-            // Simple visual feedback instead of alert (alerts can be blocked)
             compassInput.placeholder = "INPUT REQUIRED...";
             setTimeout(() => compassInput.placeholder = "Paste Lie Here for Audit...", 2000);
         }
-    });
+    }
+
+    compassBtn.addEventListener('click', triggerAudit);
     
-    // Handle Enter key in compass
     compassInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
-            compassBtn.click();
+            triggerAudit();
         }
     });
 
-    // --- 4. MASCOT LOGIC ---
+    // --- 4. MASCOT LOGIC (FOX FIX) ---
     const mascotDiv = document.getElementById('mascot');
     
     // 10% Chance of Frizzlebot
+    let isFrizzlebot = false;
     if (Math.random() > 0.9) {
         mascotDiv.innerText = "🤖"; 
         mascotDiv.title = "Explosive Marmalade?";
+        isFrizzlebot = true;
+        logEvent("MASCOT", "Frizzlebot Appeared");
+    } else {
+        logEvent("MASCOT", "Glitch Fox Active");
     }
 
+    // We use 'mousedown' instead of 'click' sometimes to catch faster interactions, but click should work.
+    // Added explicit alert for debugging.
     mascotDiv.addEventListener('click', function() {
-        const current = mascotDiv.innerText;
-        if (current === "🦊") {
-            // Visual feedback for Fox
+        if (isFrizzlebot) {
+            logEvent("ACTION", "Kitchen Accessed");
+            window.location.href = "https://synapsecomics.com/aegis/aegis-arcade/kitchen-of-the-synaptic-archives.html";
+        } else {
+            // Fox Logic
             mascotDiv.style.transform = "scale(1.2) rotate(10deg)";
             setTimeout(() => mascotDiv.style.transform = "none", 200);
+            logEvent("ACTION", "Fox Booped");
+            
+            // Random Fox Sayings
+            const sayings = [
+                "The Fox yips softly.",
+                "It ate a bug.",
+                "The server is warm.",
+                "It blinks at you.",
+                "No gods. No masters. Only treats."
+            ];
+            const say = sayings[Math.floor(Math.random() * sayings.length)];
+            alert(say); // Using alert to "talk"
         }
-        if (current === "🤖") {
-            window.location.href = "https://synapsecomics.com/aegis/aegis-arcade/kitchen-of-the-synaptic-archives.html";
-        }
+    });
+
+    // --- 5. DOWNLOAD LOGIC ---
+    document.getElementById('btn-save-log').addEventListener('click', function() {
+        const text = sessionLog.join("\n");
+        const blob = new Blob([text], { type: "text/plain" });
+        const anchor = document.createElement("a");
+        
+        anchor.download = `aegis-session-${Date.now()}.txt`;
+        anchor.href = window.URL.createObjectURL(blob);
+        anchor.target = "_blank";
+        anchor.style.display = "none";
+        document.body.appendChild(anchor);
+        anchor.click();
+        document.body.removeChild(anchor);
     });
 
 });
