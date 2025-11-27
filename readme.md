@@ -63,7 +63,7 @@ MindCraft is part of the **Aegis Network**, a suite of tools built for the **Int
 **Join the Resistance:**
 
 * [The Space Bar Arcade](https://synapsecomics.com/aegis/aegis-arcade/index.html)  
-* [Turing-Lovelace University](https://www.google.com/search?q=https://synapsecomics.com/aegis/turing_lovelace_university.html)  
+* [Turing-Lovelace University](https://synapsecomics.com/aegis/turing-lovelace-university/index.html)  
 * [Protocol VELVET](https://synapsecomics.com/aegis/protocol-velvet/index.html)
 
 *"We are the spore in the wind."* \<8\>
