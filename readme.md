@@ -28,7 +28,15 @@ A built-in "Lie Detector" input.
 * Click the Eye 👁️.  
 * The extension copies the text and launches the **Contextual Sanitizer** to audit the disparity.
 
-### **4\. The Glitch Fox 🦊**
+### **4\. The Roast Terminal 🔥**
+
+A taste filter for the performative age.
+
+* Paste a cringe LinkedIn post or a hollow brand statement.  
+* Click the Fire Icon 🔥.  
+* The AI Critic delivers a scathing, witty audit of the "Cringe Factor."
+
+### **5\. The Glitch Fox 🦊**
 
 Your guardian in the server room.
 
@@ -64,6 +72,7 @@ MindCraft is part of the **Aegis Network**, a suite of tools built for the **Int
 
 * [The Space Bar Arcade](https://synapsecomics.com/aegis/aegis-arcade/index.html)  
 * [Turing-Lovelace University](https://synapsecomics.com/aegis/turing-lovelace-university/index.html)  
-* [Protocol VELVET](https://synapsecomics.com/aegis/protocol-velvet/index.html)
+* [Protocol VELVET](https://synapsecomics.com/aegis/protocol-velvet/index.html)  
+* [The Roast Terminal](https://synapsecomics.com/aegis/aegis-arcade/roast-terminal.html)
 
 *"We are the spore in the wind."* \<8\>
