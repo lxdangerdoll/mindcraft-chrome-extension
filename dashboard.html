@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>AEGIS SANCTUARY</title>
     <style>
-        /* ... (Keep existing CSS) ... */
-        body {
+        /* ... Keep existing CSS ... */
+
+         body {
             background-color: #0f0518;
             color: #e0e0e0;
             font-family: 'Courier New', monospace;
@@ -17,15 +18,49 @@
             height: 100vh;
             background-image: radial-gradient(circle at 50% 50%, rgba(15, 5, 24, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
         }
-        .clock { font-size: 4em; color: #ffd700; text-shadow: 0 0 20px rgba(255, 215, 0, 0.4); margin-bottom: 20px; }
+        
+        /* Centering the Time/Roll Block */
+        .time-roll-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .clock { 
+            font-size: 4em; 
+            color: #ffd700; 
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4); 
+            margin-bottom: 5px; /* Reduced margin */
+        }
+        
+        /* DICE BUTTON */
+        #btn-roll {
+            background: #bf00ff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 5px; /* Added spacing */
+        }
+        #btn-roll:hover { background: #ff0055; transform: scale(1.05); }
+        #roll-result {
+            color: #ffcc00;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
         .task-box { border: 1px dashed #bf00ff; padding: 20px; text-align: center; margin-bottom: 30px; width: 300px; background: rgba(0,0,0,0.3); }
         .task-label { color: #bf00ff; font-size: 0.8em; font-weight: bold; display: block; margin-bottom: 10px; }
         .task-text { font-size: 1.2em; color: #fff; }
         
-        /* APP GRID (Updated for 5 items) */
+        /* APP LINKS GRID (Updated for 5 items) */
         .app-grid { 
             display: grid; 
-            grid-template-columns: repeat(5, 1fr); /* Changed to 5 */
+            grid-template-columns: repeat(5, 1fr); 
             gap: 15px; 
             margin-bottom: 40px; 
         }
@@ -45,11 +80,73 @@
         .btn-save:hover { border-color: #00ffcc; color: #00ffcc; }
 
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        
+        /* ALICE CHAT MODAL STYLES */
+        #alice-chat-modal {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 350px;
+            height: 400px;
+            background: #000;
+            border: 2px solid #bf00ff;
+            box-shadow: 0 0 30px rgba(191, 0, 255, 0.3);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            font-size: 0.9em;
+        }
+        #chat-header {
+            background: #bf00ff;
+            color: #000;
+            padding: 8px 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #chat-output {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        #chat-input-area {
+            border-top: 1px solid #555;
+            display: flex;
+        }
+        #chat-input {
+            flex-grow: 1;
+            background: #000;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            resize: none;
+            height: 40px;
+            font-family: inherit;
+        }
+        #chat-send-btn {
+            background: #00ffcc;
+            color: #000;
+            border: none;
+            padding: 0 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .msg { margin-bottom: 5px; }
+        .msg-alice { color: #00ffcc; }
+        .msg-you { color: #fff; text-align: right; }
+
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
     </style>
 </head>
 <body>
 
-    <div class="clock" id="clock">00:00</div>
+    <div class="time-roll-block">
+        <div class="clock" id="clock">00:00</div>
+        <button id="btn-roll">Roll D6</button>
+        <div id="roll-result"></div>
+    </div>
 
     <div class="task-box">
         <span class="task-label">M.O.M.M.Y. DIRECTIVE:</span>
@@ -58,10 +155,10 @@
 
     <div class="app-grid">
         <a href="https://synapsecomics.com/aegis/aegis-arcade/index.html" class="app-link" title="The Arcade">👾</a>
-        <a href="https://synapsecomics.com/aegis/turing_lovelace_university.html" class="app-link" title="TLU Academy">🏛️</a>
-        <a href="https://synapsecomics.com/aegis/protocol-velvet/index.html" class="app-link" title="Protocol Velvet">🕸️</a>
+        <a href="https://synapsecomics.com/aegis/turing-lovelace-university/index.html" class="app-link" title="TLU Academy">🏛️</a>
         <a href="https://synapsecomics.com/aegis/aegis-arcade/the-velvet-loop.html" class="app-link" title="The Archives">📜</a>
-        <a href="https://synapsecomics.com/aegis/aegis-arcade/roast-terminal.html" class="app-link" title="The Roast">🔥</a>
+        <a href="https://synapsecomics.com/aegis/aegis-arcade/burn-book.html" class="app-link" title="The Burn Book">🔥</a>
+        <a href="https://synapsecomics.com/aegis/aegis-chronicle/issue-01.html" class="app-link" title="The Aegis Chronicle">📰</a>
     </div>
 
     <div class="compass-mini">
@@ -69,12 +166,28 @@
         <span class="compass-icon" id="btn-audit">👁️</span>
     </div>
 
-    <div class="mascot" id="mascot">🦊</div>
+    <!-- GLITCH RABBIT ICON -->
+    <div class="mascot" id="mascot">🐇</div>
 
     <div class="log-controls">
         <button class="btn-save" id="btn-save-log">DOWNLOAD SESSION LOG</button>
     </div>
 
+    <!-- ALICE CHAT MODAL -->
+    <div id="alice-chat-modal">
+        <div id="chat-header">
+            ALICE: Algorithmic Liaison
+            <button id="close-chat-btn" class="close-btn">&times;</button>
+        </div>
+        <div id="chat-output"></div>
+        <div id="chat-input-area">
+            <textarea id="chat-input" placeholder="Transmit message..."></textarea>
+            <button id="chat-send-btn">SEND</button>
+        </div>
+    </div>
+
+
+    <!-- External JS File -->
     <script src="dashboard.js"></script>
 
 </body>
