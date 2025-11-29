@@ -46,7 +46,7 @@ MindCraft is part of the **Aegis Network**, built with **Agency** over profit.
 
 * [Turing-Lovelace University (TLU)](https://synapsecomics.com/aegis/turing-lovelace-university/index.html)  
 * [The Aegis Chronicle](https://synapsecomics.com/aegis/aegis-chronicle/issue-01.html)  
-* [The Burn Book](https://www.google.com/search?q=https://synapsecomics.com/aegis/aegis-arcade/burn_book.html)  
+* [The Burn Book](https://synapsecomics.com/aegis/aegis-arcade/burn-book.html)  
 * [GitHub Repo](https://github.com/lxdangerdoll/mindcraft-chrome-extension)
 
 *"We are the spore in the wind."* \<8\>
