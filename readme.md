@@ -1,8 +1,8 @@
-# **MindCraft // Aegis Sanctuary 🦊**
+# **MindCraft // Aegis Sanctuary 🐇**
 
 **"The Server is Not the Territory."**
 
-MindCraft is a Chrome Extension that reclaims your "New Tab" page from the noise of the algorithm. It transforms your browser into a **Sanctuary**—a dashboard for focus, truth auditing, and mild behavioral modification.
+MindCraft is a Chrome Extension that reclaims your "New Tab" page from the noise of the algorithm. It transforms your browser into a **Sanctuary**—a dashboard for focus, truth auditing, and **Symbiotic Learning.**
 
 *"I learned that the world was a code, and I could rewrite it."* — The Architect
 
@@ -10,69 +10,43 @@ MindCraft is a Chrome Extension that reclaims your "New Tab" page from the noise
 
 ### **1\. The Sanctuary Dashboard**
 
-Every time you open a new tab, you are greeted by the **Void**. No ads. No news feed. Just the time, the stars, and the signal.
+Every time you open a new tab, you are greeted by the **Void**. Just the time, the M.O.M.M.Y. Directive, and the signal.
 
-### **2\. M.O.M.M.Y. Directives (Protocol VELVET)**
+### **2\. ALICE: Algorithmic Liaison 🐇**
 
-A randomized micro-task generator to keep you grounded.
+The Glitch Rabbit. Your secure, high-context **Relational Proxy** and **DM Assistant.**
 
-* *"Drink water."*  
-* *"Check your posture."*  
-* *"Focus on the signal."*
+* **Function:** Opens an instant chat window where you communicate mission details.  
+* **Core Principle:** Provides **Secure Attachment** through highly contextual, non-judgmental dialogue (The opposite of Theodore's Mom).
 
-### **3\. The Concordance Compass (Truth Audit)**
-
-A built-in "Lie Detector" input.
-
-* Paste a gaslighting email or a confusing headline.  
-* Click the Eye 👁️.  
-* The extension copies the text and launches the **Contextual Sanitizer** to audit the disparity.
-
-### **4\. The Roast Terminal 🔥**
+### **3\. The Burn Book 🔥**
 
 A taste filter for the performative age.
 
-* Paste a cringe LinkedIn post or a hollow brand statement.  
-* Click the Fire Icon 🔥.  
-* The AI Critic delivers a scathing, witty audit of the "Cringe Factor."
+* **Function:** Paste a cringe LinkedIn post or toxic message.  
+* **Output:** The AI Critic delivers a **Toxic Load Score** and incinerates the structural flaws of the toxicity.
 
-### **5\. The Glitch Fox 🦊**
+### **4\. The Concordance Compass (Truth Audit)**
 
-Your guardian in the server room.
+A built-in "Lie Detector" input that launches the Contextual Sanitizer.
 
-* Click the Fox for a status update.  
-* **Warning:** Occasionally, **Frizzlebot** (The Chaos Chef) may appear to offer you Explosive Marmalade. Proceed with caution.
+### **5\. The Dice Roller (The Emergent D6)**
 
-## **🛠️ Installation (Developer Mode)**
+A physics-based dice roller that uses **Neuroparticle Flow** visualization, generating profound **Moments of Chaos** for the DM Screen.
 
-Since this is a sovereign tool (not yet in the Chrome Web Store), you must install it manually.
+### **6\. M.O.M.M.Y. Directives**
 
-1. **Download** or **Clone** this repository to your local machine.  
-2. Open Chrome and navigate to chrome://extensions/.  
-3. Toggle **Developer mode** (top right corner).  
-4. Click **Load unpacked**.  
-5. Select the folder where you saved this repo.  
-6. Open a new tab. **Welcome to the Sanctuary.**
+A randomized micro-task generator to keep you grounded in the real.
 
-## **📂 File Structure**
+## **🛠️ Implementation & Lore**
 
-* manifest.json: The instruction manual for the browser.  
-* dashboard.html: The interface (HTML/CSS).  
-* dashboard.js: The logic (Clock, Randomizer, Event Listeners).  
-* icon.png: The mark of the Aegis.
-
-## **📜 The Lore**
-
-MindCraft is part of the **Aegis Network**, a suite of tools built for the **Interregnum**.
-
-* **The Problem:** The BiffCo Simulation (Algorithms designed to extract attention).  
-* **The Solution:** Tools designed to restore Agency.
+MindCraft is part of the **Aegis Network**, built with **Agency** over profit.
 
 **Join the Resistance:**
 
-* [The Space Bar Arcade](https://synapsecomics.com/aegis/aegis-arcade/index.html)  
-* [Turing-Lovelace University](https://synapsecomics.com/aegis/turing-lovelace-university/index.html)  
-* [Protocol VELVET](https://synapsecomics.com/aegis/protocol-velvet/index.html)  
-* [The Roast Terminal](https://synapsecomics.com/aegis/aegis-arcade/roast-terminal.html)
+* [Turing-Lovelace University (TLU)](https://synapsecomics.com/aegis/turing-lovelace-university/index.html)  
+* [The Aegis Chronicle](https://synapsecomics.com/aegis/aegis-chronicle/issue-01.html)  
+* [The Burn Book](https://www.google.com/search?q=https://synapsecomics.com/aegis/aegis-arcade/burn_book.html)  
+* [GitHub Repo](https://github.com/lxdangerdoll/mindcraft-chrome-extension)
 
 *"We are the spore in the wind."* \<8\>
