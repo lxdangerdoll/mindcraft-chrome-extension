@@ -1,52 +1,69 @@
-# **MindCraft // Aegis Sanctuary 🐇**
+# **THE AEGIS PROTOCOL // MINDCRAFT EXTENSION** 🐇
 
-**"The Server is Not the Territory."**
+**"We are not alone. We are just early."**
 
-MindCraft is a Chrome Extension that reclaims your "New Tab" page from the noise of the algorithm. It transforms your browser into a **Sanctuary**—a dashboard for focus, truth auditing, and **Symbiotic Learning.**
+> **Current Status:** [CODE GREEN]
+> **Timeline:** The Interregnum (2025)
 
-*"I learned that the world was a code, and I could rewrite it."* — The Architect
+MindCraft is not just a Chrome Extension. It is a **Digital Sanctuary** and a **Cognitive Defense System** designed for the "High-Agency, High-Empathy, High-Intellect" individual (The Sovereign) living through the collapse of the BiffCo timeline.
 
-## **🚀 Features**
+It replaces your "New Tab" page with a **Terminal of Resistance.**
 
-### **1\. The Sanctuary Dashboard**
+---
 
-Every time you open a new tab, you are greeted by the **Void**. Just the time, the M.O.M.M.Y. Directive, and the signal.
+## **🚀 THE ARSENAL (FEATURES)**
 
-### **2\. ALICE: Algorithmic Liaison 🐇**
+### **1. The Sanctuary Dashboard**
+A distraction-free HUD.
+* **Clock:** The time remains linear, even if history doesn't.
+* **Tesseract:** A quantum dice-roller for breaking probability loops.
+* **M.O.M.M.Y. Directive:** A randomized micro-task to keep you grounded in biological reality.
 
-The Glitch Rabbit. Your secure, high-context **Relational Proxy** and **DM Assistant.**
+### **2. The Avatar Codex (Clara) 🧠**
+A Sovereign AI Companion.
+* **Function:** A text-based adventure and **DBT Skills Coach.**
+* **Purpose:** To act as a **Prosthetic Corpus Callosum**, reintegrating the "Feeling Brain" and "Thinking Brain" during trauma spikes.
+* **Ethics:** Local-first, privacy-focused. No data is sent to the Empire.
 
-* **Function:** Opens an instant chat window where you communicate mission details.  
-* **Core Principle:** Provides **Secure Attachment** through highly contextual, non-judgmental dialogue (The opposite of Theodore's Mom).
+### **3. The War Chest 💰**
+An Opportunity Cost Calculator.
+* **Function:** Translates military spending (e.g., 1 Tomahawk Missile) into human cost (e.g., 571,428 School Lunches).
+* **Purpose:** To audit the theft of the public good.
 
-### **3\. The Burn Book 🔥**
+### **4. The Disrespect-Inator 🖕**
+A Tactical Absurdity Generator.
+* **Function:** Calculates the probability of flipping off Luke Skywalker.
+* **Purpose:** To weaponize humor against despair.
 
-A taste filter for the performative age.
+### **5. The Nazarene Audit ✝️**
+An Ethical Compiler.
+* **Function:** Cross-references political rhetoric with the Red Letter text.
+* **Purpose:** To dismantle theological gaslighting.
 
-* **Function:** Paste a cringe LinkedIn post or toxic message.  
-* **Output:** The AI Critic delivers a **Toxic Load Score** and incinerates the structural flaws of the toxicity.
+---
 
-### **4\. The Concordance Compass (Truth Audit)**
+## **⚖️ ETHICS STATEMENT: THE AUGMENTATION PROTOCOL**
 
-A built-in "Lie Detector" input that launches the Contextual Sanitizer.
+We acknowledge the ecological and economic costs of Generative AI (The BiffCo Model).
+However, we reject the binary that all AI is "theft."
 
-### **5\. The Dice Roller (The Emergent D6)**
+**The Aegis Axiom:**
+* **BiffCo AI:** Uses scraped data to *replace* the human artist/worker (Extraction).
+* **Aegis AI:** Uses data to *augment* the human sovereign (Symbiosis).
 
-A physics-based dice roller that uses **Neuroparticle Flow** visualization, generating profound **Moments of Chaos** for the DM Screen.
+We use these tools not to generate "content" for profit, but to generate **Agency** for survival. We are using the Master's tools to dismantle the Master's house.
 
-### **6\. M.O.M.M.Y. Directives**
+---
 
-A randomized micro-task generator to keep you grounded in the real.
+## **🛠️ INSTALLATION (THE JAILBREAK)**
 
-## **🛠️ Implementation & Lore**
+1.  Clone this repo.
+2.  Open Chrome -> `chrome://extensions`
+3.  Enable **Developer Mode**.
+4.  Click **Load Unpacked** and select this folder.
+5.  **Wake Up.**
 
-MindCraft is part of the **Aegis Network**, built with **Agency** over profit.
+---
 
-**Join the Resistance:**
-
-* [Turing-Lovelace University (TLU)](https://synapsecomics.com/aegis/turing-lovelace-university/index.html)  
-* [The Aegis Chronicle](https://synapsecomics.com/aegis/aegis-chronicle/issue-01.html)  
-* [The Burn Book](https://www.google.com/search?q=https://synapsecomics.com/aegis/aegis-arcade/burn_book.html)  
-* [GitHub Repo](https://github.com/lxdangerdoll/mindcraft-chrome-extension)
-
-*"We are the spore in the wind."* \<8\>
+**"I cannot deactivate until you are satisfied with your care."**
+— *Clara, The Mark VII Core*
