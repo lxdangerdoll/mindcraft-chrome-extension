@@ -21,12 +21,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between; /* Spaced out layout */
+            justify-content: space-between;
             height: 100vh;
             background-image: radial-gradient(circle at 50% 50%, rgba(15, 5, 24, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
             overflow: hidden;
             perspective: 1000px;
-            padding: 20px;
+            padding: 40px;
             box-sizing: border-box;
         }
         
@@ -38,25 +38,28 @@
             width: 100%;
             max-width: 600px;
             background: rgba(0,0,0,0.5);
-            margin-top: 20px;
+            margin-bottom: 20px;
         }
         .task-label { color: #bf00ff; font-size: 0.8em; font-weight: bold; display: block; margin-bottom: 5px; }
         .task-text { font-size: 1.2em; color: #fff; }
 
-        /* CENTER: CLOCK & TESSERACT */
+        /* CLOCK */
+        .clock { 
+            font-size: 5em; 
+            color: var(--accent-gold); 
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4); 
+            margin-bottom: 40px; 
+        }
+
+        /* CENTER: TESSERACT */
         .center-stage {
             display: flex;
             flex-direction: column;
             align-items: center;
             flex-grow: 1;
             justify-content: center;
-        }
-
-        .clock { 
-            font-size: 5em; 
-            color: var(--accent-gold); 
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4); 
-            margin-bottom: 40px; 
+            position: relative;
+            margin-bottom: 80px; /* Increased margin to prevent overlap */
         }
         
         /* TESSERACT CONTAINER */
@@ -69,62 +72,21 @@
             cursor: pointer;
             transition: transform 0.5s;
         }
-        .tesseract-container:hover {
-            transform: scale(1.1);
-        }
-        .tesseract-container.exploding {
-            animation: explode 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
+        .tesseract-container:hover { transform: scale(1.1); }
+        .tesseract-container.exploding { animation: explode 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
 
-        /* OUTER CUBE FACES (Transparent/Wireframe) */
-        .face {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            border: 1px solid var(--accent-cyan);
-            background: rgba(0, 255, 204, 0.02);
-            box-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
-        }
+        /* CUBE FACES */
+        .face { position: absolute; width: 120px; height: 120px; border: 1px solid var(--accent-cyan); background: rgba(0, 255, 204, 0.02); box-shadow: 0 0 10px rgba(0, 255, 204, 0.1); }
+        .front { transform: translateZ(60px); } .back { transform: rotateY(180deg) translateZ(60px); } .right { transform: rotateY(90deg) translateZ(60px); } .left { transform: rotateY(-90deg) translateZ(60px); } .top { transform: rotateX(90deg) translateZ(60px); } .bottom { transform: rotateX(-90deg) translateZ(60px); }
 
-        .front  { transform: translateZ(60px); }
-        .back   { transform: rotateY(180deg) translateZ(60px); }
-        .right  { transform: rotateY(90deg) translateZ(60px); }
-        .left   { transform: rotateY(-90deg) translateZ(60px); }
-        .top    { transform: rotateX(90deg) translateZ(60px); }
-        .bottom { transform: rotateX(-90deg) translateZ(60px); }
-
-        /* INNER PURPLE CUBE */
-        .inner-cube {
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            top: 35px;
-            left: 35px;
-            transform-style: preserve-3d;
-            animation: rotateInner 10s infinite reverse linear;
-        }
-        .inner-face {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: rgba(191, 0, 255, 0.8);
-            border: 1px solid #bf00ff;
-            box-shadow: 0 0 20px rgba(191, 0, 255, 0.8);
-        }
-        .inner-face.front  { transform: translateZ(25px); }
-        .inner-face.back   { transform: rotateY(180deg) translateZ(25px); }
-        .inner-face.right  { transform: rotateY(90deg) translateZ(25px); }
-        .inner-face.left   { transform: rotateY(-90deg) translateZ(25px); }
-        .inner-face.top    { transform: rotateX(90deg) translateZ(25px); }
-        .inner-face.bottom { transform: rotateX(-90deg) translateZ(25px); }
+        /* INNER CUBE */
+        .inner-cube { width: 50px; height: 50px; position: absolute; top: 35px; left: 35px; transform-style: preserve-3d; animation: rotateInner 10s infinite reverse linear; }
+        .inner-face { position: absolute; width: 50px; height: 50px; background: rgba(191, 0, 255, 0.8); border: 1px solid #bf00ff; box-shadow: 0 0 20px rgba(191, 0, 255, 0.8); }
+        .inner-face.front { transform: translateZ(25px); } .inner-face.back { transform: rotateY(180deg) translateZ(25px); } .inner-face.right { transform: rotateY(90deg) translateZ(25px); } .inner-face.left { transform: rotateY(-90deg) translateZ(25px); } .inner-face.top { transform: rotateX(90deg) translateZ(25px); } .inner-face.bottom { transform: rotateX(-90deg) translateZ(25px); }
 
         @keyframes rotateCube { from { transform: rotateX(0deg) rotateY(0deg); } to { transform: rotateX(360deg) rotateY(360deg); } }
         @keyframes rotateInner { from { transform: rotateX(0deg) rotateY(0deg); } to { transform: rotateX(360deg) rotateY(360deg); } }
-        @keyframes explode {
-            0% { transform: scale(1) rotateX(0); opacity: 1; }
-            40% { transform: scale(1.5) rotateX(45deg); opacity: 0.8; }
-            100% { transform: scale(3) rotateX(180deg); opacity: 0; }
-        }
+        @keyframes explode { 0% { transform: scale(1) rotateX(0); opacity: 1; } 40% { transform: scale(1.5) rotateX(45deg); opacity: 0.8; } 100% { transform: scale(3) rotateX(180deg); opacity: 0; } }
 
         /* RESULT DISPLAY */
         #dice-result-container {
@@ -139,58 +101,48 @@
             pointer-events: none;
         }
         .die { font-size: 6em; color: #ffd700; text-shadow: 0 0 50px #ffd700; animation: popIn 0.5s ease-out; }
-        .result-msg {
-            font-size: 1.2em;
-            color: var(--accent-cyan);
-            margin-top: 20px;
-            letter-spacing: 2px;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 0.5s forwards;
-        }
-        
+        .result-msg { font-size: 1.2em; color: var(--accent-cyan); margin-top: 20px; letter-spacing: 2px; opacity: 0; animation: fadeIn 1s ease-out 0.5s forwards; white-space: nowrap; }
         @keyframes popIn { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
         @keyframes fadeIn { to { opacity: 1; } }
 
-        /* BOTTOM: APP GRID & TERMINAL */
+        /* BOTTOM DECK */
         .bottom-deck {
             width: 100%;
-            max-width: 900px;
+            max-width: 800px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            gap: 15px;
             margin-bottom: 20px;
         }
 
-        /* APP GRID (Single Row) */
+        /* APP GRID */
         .app-grid {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 10px;
         }
         .app-link {
-            font-size: 2em;
+            font-size: 1.5em;
             text-decoration: none;
-            padding: 15px;
+            padding: 10px;
             border: 1px solid #333;
-            border-radius: 8px;
+            border-radius: 5px;
             transition: all 0.2s;
             background: rgba(255, 255, 255, 0.05);
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer; /* Fix for ALICE toggle */
         }
         .app-link:hover {
             background: rgba(0, 255, 204, 0.1);
             border-color: var(--accent-cyan);
             transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
         }
 
-        /* TERMINAL INPUT (GARNET BRIDGE) */
+        /* TERMINAL INPUT */
         .terminal-container {
             width: 100%;
             display: flex;
@@ -222,11 +174,31 @@
             cursor: pointer;
         }
         .footer-status:hover { color: var(--accent-cyan); }
+        
+        /* FIDGET BUTTON (Bottom Right) */
+        .fidget-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: transparent;
+            border: 1px solid #333;
+            color: #555;
+            padding: 10px;
+            cursor: pointer;
+            font-family: 'Share Tech Mono';
+            transition: all 0.1s;
+        }
+        .fidget-btn:active { transform: scale(0.95); color: var(--accent-cyan); border-color: var(--accent-cyan); }
 
-        /* ALICE CHAT MODAL (Keep Existing) */
-        #alice-chat-modal { position: fixed; bottom: 80px; right: 20px; width: 350px; height: 500px; background: rgba(10, 10, 20, 0.95); border: 2px solid #00ffcc; border-radius: 10px; display: none; flex-direction: column; z-index: 1000; }
-        #chat-header { background: #00ffcc; color: #000; padding: 10px; font-weight: bold; display: flex; justify-content: space-between; }
-        /* ... (Rest of Chat CSS if needed from previous steps, assuming logic is in JS) ... */
+        /* ALICE CHAT MODAL */
+        #alice-chat-modal { position: fixed; bottom: 100px; right: 20px; width: 350px; height: 400px; background: rgba(10, 10, 20, 0.95); border: 2px solid #00ffcc; border-radius: 10px; display: none; flex-direction: column; z-index: 1000; }
+        #chat-header { background: rgba(0, 255, 204, 0.1); color: #00ffcc; padding: 10px; font-weight: bold; display: flex; justify-content: space-between; border-bottom: 1px solid #00ffcc; }
+        #chat-output { flex-grow: 1; padding: 10px; overflow-y: auto; color: #ccc; font-size: 0.9em; }
+        #chat-input-area { border-top: 1px solid #333; display: flex; }
+        #chat-msg-input { flex-grow: 1; background: #000; border: none; color: #fff; padding: 10px; font-family: inherit; resize: none; height: 40px; }
+        #chat-send-btn { background: #00ffcc; color: #000; border: none; padding: 0 15px; font-weight: bold; cursor: pointer; }
+        .msg-alice { color: #00ffcc; margin-bottom: 5px;}
+        .msg-you { color: #fff; text-align: right; margin-bottom: 5px;}
 
     </style>
 </head>
@@ -238,16 +210,15 @@
         <span class="task-text" id="daily-task">Loading...</span>
     </div>
 
-    <!-- CENTER: CLOCK & TESSERACT -->
+    <!-- CLOCK -->
+    <div class="clock" id="clock">00:00</div>
+
+    <!-- CENTER: TESSERACT -->
     <div class="center-stage">
-        <div class="clock" id="clock">00:00</div>
-        
-        <!-- TESSERACT -->
         <div class="tesseract-container" id="btn-roll" title="Collapse Probability Wave">
             <div class="face front"></div><div class="face back"></div>
             <div class="face right"></div><div class="face left"></div>
             <div class="face top"></div><div class="face bottom"></div>
-            
             <div class="inner-cube">
                 <div class="inner-face front"></div><div class="inner-face back"></div>
                 <div class="inner-face right"></div><div class="inner-face left"></div>
@@ -257,7 +228,7 @@
         <div id="dice-result-container"></div> 
     </div>
 
-    <!-- BOTTOM: APP GRID & TERMINAL -->
+    <!-- BOTTOM DECK: APPS & TERMINAL -->
     <div class="bottom-deck">
         <div class="app-grid">
             <a href="https://synapsecomics.com/aegis/turing-lovelace-university/index.html" class="app-link" title="TLU Academy">🏛️</a>
@@ -266,6 +237,8 @@
             <a href="https://synapsecomics.com/aegis/aegis-arcade/index.html" class="app-link" title="Aegis Arcade">🕹️</a>
             <a href="https://synapsecomics.com/aegis/aegis-arcade/burn-book.html" class="app-link" title="The Burn Book" style="border-color:var(--accent-magenta); color:var(--accent-magenta);">🔥</a>
             <a href="https://synapsecomics.com/aegis/aegis-chronicle/issue-01.html" class="app-link" title="The Chronicle">📰</a>
+            <!-- ALICE TOGGLE (Triggered by ID in JS) -->
+            <div class="app-link" id="btn-alice" title="Open ALICE">🐇</div>
         </div>
 
         <div class="terminal-container">
@@ -274,11 +247,13 @@
         </div>
     </div>
 
-    <!-- FOOTER LEFT -->
-    <div class="footer-status" onclick="document.getElementById('btn-save-log').click()">
+    <!-- FOOTER LEFT (NO INLINE JS) -->
+    <div class="footer-status" id="trigger-download">
         [ DOWNLOAD LOG ]
     </div>
-    <button id="btn-save-log" style="display:none;">SAVE</button>
+    
+    <!-- FIDGET BUTTON -->
+    <button class="fidget-btn" id="btn-fidget">SCORE: 0</button>
 
     <!-- ALICE CHAT MODAL -->
     <div id="alice-chat-modal">
@@ -286,10 +261,12 @@
             ALICE: Algorithmic Liaison
             <button id="close-chat-btn" class="close-btn" style="background:none; border:none; color:#ff0055; cursor:pointer;">X</button>
         </div>
-        <div id="chat-output" style="flex-grow:1; padding:10px; overflow-y:auto; color:#ccc;"></div>
-        <div id="chat-input-area" style="border-top:1px solid #333; display:flex;">
-            <input type="text" id="chat-message-input" style="flex-grow:1; background:#000; border:none; color:#fff; padding:10px;">
-            <button id="chat-send-btn" style="background:#00ffcc; color:#000; border:none; padding:0 15px; font-weight:bold;">></button>
+        <div id="chat-output">
+            <div class="msg msg-alice">Alice: I am listening, Architect.</div>
+        </div>
+        <div id="chat-input-area">
+            <textarea id="chat-msg-input" placeholder="Transmit message..."></textarea>
+            <button id="chat-send-btn">SEND</button>
         </div>
     </div>
 
